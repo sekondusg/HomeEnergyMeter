@@ -1,3 +1,10 @@
+#
+# The generation of the expanded ESP config YAML file uses yglu
+#    See: https://github.com/lbovet/yglu/blob/master/README.md
+#    Install: python3 -m venv venv venv
+#             . venv/bin/activate
+#             pip3 install yglu
+
 last=${PWD}/.last
 
 $(last): HomeEnergyMeter.yaml

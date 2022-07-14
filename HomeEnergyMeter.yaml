@@ -14,7 +14,7 @@ api:
   password: !? $env.esp_api_password
 
 ota:
-  password: !? $env.esp_ota_password
+  password: !? $env.esp_ota_password 
 
 mqtt:
   broker: !? $env.mqtt_broker
@@ -32,12 +32,16 @@ wifi:
     password: !? $env.wifi_ap_password
 
 sensor:
-  - platform: pulse_counter
+  - platform: pulse_meter
     pin: GPIO13
     unit_of_measurement: 'kW'
-    name: 'HomeEnergyMeter'
+    name: 'Electricity Usage'
     filters:
       - multiply: 0.06  # (60s/1000 pulses per kWh)
-
-captive_portal:
+    total:
+      name: "Electricity Total"
+      unit_of_measurement: "kWh"
+      accuracy_decimals: 3
+      filters:
+        - multiply: 0.001
 
