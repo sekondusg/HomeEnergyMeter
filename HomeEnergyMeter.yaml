@@ -8,6 +8,7 @@ esp32:
 
 # Enable logging
 logger:
+  level: DEBUG
 
 # Enable Home Assistant API
 api:
@@ -33,7 +34,7 @@ wifi:
 
 sensor:
   - platform: pulse_meter
-    pin: GPIO13
+    pin: GPIO013
     unit_of_measurement: 'kW'
     name: 'Electricity Usage'
     filters:
